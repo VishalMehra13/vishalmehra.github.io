@@ -1,8 +1,84 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0 8%; color:#222; background:#fff; }
-.site-header { text-align:center; padding:40px 0; border-bottom:1px solid #eee; }
-h1 { color:#0b3c5d; margin:0; }
-.tagline { color:#2a7f8e; margin:6px 0 0; }
-.contact a { color:#0b3c5d; text-decoration:none; }
-section { padding:30px 0; }
-.project { background:#f8f9fa; padding:12px; border-radius:6px; margin-bottom:12px; }
-.button { display:inline-block; padding:10px 16px; background:#0b3c5d; color:#fff; text-decoration:none; border-radius:6px; }
+:root{
+  --bg:#0b1020;
+  --card:#0f1530;
+  --soft:#f6f8fb;
+  --text:#111827;
+  --muted:#6b7280;
+  --primary:#0b3c5d;
+  --accent:#2a7f8e;
+  --white:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text); background:#fff; line-height:1.6;
+}
+a{color:var(--primary); text-decoration:none}
+a:hover{text-decoration:underline}
+.skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.container{width:min(1100px, 92%); margin:0 auto}
+.section{padding:64px 0}
+.section--soft{background:var(--soft)}
+h1,h2,h3{line-height:1.2; margin:0 0 12px}
+h2{font-size:28px}
+h3{font-size:20px}
+
+.hero{
+  position:relative; isolation:isolate; color:#fff;
+  background: radial-gradient(1000px 400px at 20% -10%, #395c7a55, transparent),
+              linear-gradient(120deg, #0b3c5d, #2a7f8e);
+  overflow:hidden;
+}
+.nav{display:flex; gap:18px; justify-content:flex-end; padding:16px 0; font-weight:600}
+.nav a{color:#cfe7ff}
+.nav a:hover{color:#fff}
+.hero__inner{position:relative; padding:28px 0 80px}
+.hero__content{max-width:760px; padding:40px 0 10px}
+.hero__content h1{font-size:44px; margin:8px 0 8px}
+.kicker{opacity:.95; font-weight:600; letter-spacing:.3px}
+.sub{opacity:.9; margin:8px 0 18px; max-width:56ch}
+.cta{display:flex; gap:12px; margin:14px 0 8px; flex-wrap:wrap}
+.btn{display:inline-block; border-radius:10px; padding:12px 16px; font-weight:600; border:1px solid #ffffff30}
+.btn.primary{background:#fff; color:var(--primary)}
+.btn.ghost{color:#fff}
+.btn.tiny{padding:8px 12px; font-size:14px}
+.social{opacity:.9; margin-top:8px}
+.hero__card{
+  position:absolute; right:0; bottom:-40px; transform:translateY(-10px);
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(6px); border-radius:14px; padding:14px; display:flex; gap:18px;
+}
+.stat{display:flex; flex-direction:column; align-items:center}
+.stat__num{font-size:24px; font-weight:700}
+.stat__label{font-size:12px; opacity:.9}
+.hero__bg{position:absolute; inset:0; z-index:-1;}
+
+.grid-2{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center}
+.about__card{position:relative; border:1px solid #e5e7eb; border-radius:14px; overflow:hidden; background:#fff}
+.about__card img{display:block; width:100%; height:auto}
+.about__badge{position:absolute; bottom:12px; left:12px; background:#111827; color:#fff; padding:6px 10px; border-radius:8px; font-size:12px}
+
+.chips{display:flex; flex-wrap:wrap; gap:10px; padding:0; margin:8px 0 0; list-style:none}
+.chips li{background:#eef6ff; color:#0b3c5d; padding:8px 12px; border-radius:999px; font-weight:600; border:1px solid #d3e6ff}
+
+.card{background:#fff; border:1px solid #e6e8ef; border-radius:14px; padding:18px 16px; margin:14px 0; box-shadow: 0 4px 16px rgba(18, 42, 66, .06)}
+.card__head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px}
+.badge{background:#0b3c5d; color:#fff; font-size:12px; padding:6px 8px; border-radius:8px}
+.metrics{display:flex; gap:16px; padding:0; margin:12px 0 0; list-style:none}
+.metrics li{display:flex; gap:8px; align-items:center; background:#f6f8fb; border:1px solid #e6e8ef; padding:8px 10px; border-radius:8px; font-weight:600}
+.metrics span{color:#6b7280; font-weight:600}
+
+.timeline{list-style:none; padding:0; margin:12px 0 0}
+.timeline li{padding:10px 0; border-left:3px solid #e6e8ef; padding-left:12px; margin-left:6px}
+
+.contact p{margin:0.25rem 0}
+
+.footer{background:#0f1530; color:#cfd7ff; padding:20px 0}
+.footer a{color:#cfe7ff}
+
+@media (max-width: 860px){
+  .hero__content h1{font-size:36px}
+  .grid-2{grid-template-columns: 1fr}
+  .hero__card{position:relative; right:auto; bottom:auto; margin-top:14px}
+}
